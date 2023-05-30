@@ -1,5 +1,32 @@
 img {
     width: 50px;
     height: auto;
-    border-radius: .3rem;
+    border-radius: var(--rem-xs);
+}
+
+.navbar {
+    a {
+        font-weight: var(--font-weight-m);
+    }
+
+    input::placeholder {
+        font-weight: var(--font-weight-m);
+    }
+
+    .btn {
+        background-color: var(--light-green);
+        font-weight: var(--font-weight-m);
+    }
+
+    
+}
+
+#cart {
+    border: none;
+    margin-top: .5rem;
+
+
+    color: var(--light-green);
+    font-weight: var(--font-weight-m);
+    background-color: transparent;
 }

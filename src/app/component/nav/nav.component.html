@@ -1,7 +1,10 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary border rounded-1">
   <div class="container-fluid">
     <a class="navbar-brand" href="#"
-      ><img src="assets/logo/logo.nike.jpg" alt=""
+      ><img
+        class="shadow-sm bg-body-tertiary rounded"
+        src="assets/logo/logo.nike.jpg"
+        alt=""
     /></a>
     <button
       class="navbar-toggler"
@@ -17,30 +20,33 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item dropdown">
           <a
-            class="nav-link dropdown-toggle"
-            href="#"
-            role="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
+            class="nav-link active"
+            aria-current="page"
+            href="https://p-lakatos-portfolio.vercel.app"
+            >Home</a
           >
-            Dropdown
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider" /></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled">Disabled</a>
+          <a class="nav-link" href="#">Overview</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Shoes</a>
+        </li>
+        <li class="nav-item">
+          <div class="demo-section">
+            <button
+              (click)="toggleBadgeVisibility()"
+              id="cart"
+              mat-raised-button
+              color="primary"
+              [matBadge]="cartItem"
+              matBadgePosition="before"
+              matBadgeColor="accent"
+            >
+              <span class="material-symbols-outlined"> shopping_cart </span>
+            </button>
+          </div>
         </li>
       </ul>
       <form class="d-flex" role="search">
@@ -50,7 +56,7 @@
           placeholder="Search"
           aria-label="Search"
         />
-        <button class="btn btn-outline-success" type="submit">Search</button>
+        <button class="btn" type="submit">Search</button>
       </form>
     </div>
   </div>

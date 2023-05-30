@@ -2,4 +2,20 @@
 * {
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    word-spacing: 2px;
+
 }
+:root {
+
+    //colors
+    --light-green: rgb(0, 240, 140);
+
+    //font-weights
+    --font-weight-m: 600;
+
+    //rems
+    --rem-xs:.3rem;
+}
+
+

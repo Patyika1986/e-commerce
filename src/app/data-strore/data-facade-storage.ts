@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, signal } from '@angular/core';
 import { BehaviorSubject, Observable, Subject, takeUntil } from 'rxjs';
 import { DataStoreService } from './data-store.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
@@ -14,6 +14,7 @@ export class DataFacadeStorage {
 
   private _products$ = new BehaviorSubject<[]>([]);
   public products$: Observable<[]> = this._products$.asObservable();
+  public cartItems = signal(0);
 
  private subscribtions$ = new Subject();
 
