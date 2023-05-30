@@ -6,7 +6,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 @Injectable({
   providedIn: 'root',
 })
-export class SupplyFacade {
+export class DataFacadeStorage {
   constructor(
     private dataStoreService: DataStoreService,
     private http: HttpClient

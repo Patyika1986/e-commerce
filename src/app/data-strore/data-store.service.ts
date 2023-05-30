@@ -15,7 +15,7 @@ export class DataStoreService {
       Accept: 'application/json',
     });
     return this.http.post(
-      'https://e-commerce-7e649-default-rtdb.firebaseio.com/products.json',
+      'https://e-commerce-294cd-default-rtdb.firebaseio.com/products.json',
       item,
       { headers }
     );
