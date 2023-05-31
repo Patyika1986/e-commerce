@@ -34,14 +34,16 @@
           <a class="nav-link" href="#">Shoes</a>
         </li>
         <li class="nav-item">
+          <a class="nav-link" href="#">Shoes</a>
+        </li>
+        <li class="nav-item">
           <div class="demo-section">
             <button
               (click)="toggleBadgeVisibility()"
               id="cart"
               mat-raised-button
-              color="primary"
               [matBadge]="cartItem"
-              matBadgePosition="before"
+              matBadgePosition="after"
               matBadgeColor="accent"
             >
               <span class="material-symbols-outlined"> shopping_cart </span>

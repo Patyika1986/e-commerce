@@ -11,7 +11,7 @@ export class NavComponent {
   cartItem = 0;
 
   toggleBadgeVisibility() {
-    this.dataFacadeStorage.cartItems.update((cal) => cal + 1);
+    this.dataFacadeStorage.cartItems.update((count) => count + 1);
     this.cartItem = this.dataFacadeStorage.cartItems();
   }
 }
