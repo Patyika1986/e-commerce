@@ -8,11 +8,13 @@ import { NavComponent } from './component/nav/nav.component';
 import { OverviewComponent } from './component/overview/overview.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatBadgeModule} from '@angular/material/badge';
+import { GaleryComponent } from './component/galery/galery.component';
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
-    OverviewComponent
+    OverviewComponent,
+    GaleryComponent
   ],
   imports: [
     BrowserModule,
