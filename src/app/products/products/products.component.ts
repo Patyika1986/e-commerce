@@ -22,4 +22,9 @@ export class ProductsComponent {
     });
     
   }
+
+  addToBasket(item:any){
+    console.log(item);
+    
+  }
 }

@@ -1,28 +1,12 @@
 <div class="wrapper">
   <div class="my-rows">
-    <div class="my-cols" *ngFor="let items of products">
+    <div class="my-cols" *ngFor="let items of products; let item">
       <div class="my-cards">
         <img src="{{ items.img }}" alt="" />
         <h4>{{ items.name }}</h4>
         <p>{{ items.price }}€</p>
-        <button class="btn btn-success">Buy</button>
+        <button id="button" (click)="addToBasket(item)">Buy</button>
       </div>
     </div>
-    <!-- <div class="my-cols">
-      <div class="my-cards">
-        <img src="assets/image/product-1.webp" alt="" />
-        <h4>Card Title</h4>
-        <p>price</p>
-        <button class="btn btn-success">Buy</button>
-      </div>
-    </div>
-    <div class="my-cols">
-      <div class="my-cards">
-        <img src="assets/image/product-1.webp" alt="" />
-        <h4>Card Title</h4>
-        <p>price</p>
-        <button class="btn btn-success">Buy</button>
-      </div>
-    </div> -->
   </div>
 </div>

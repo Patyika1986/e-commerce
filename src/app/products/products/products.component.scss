@@ -1,56 +1,56 @@
 .wrapper {
-    width: 95vw;
-    margin: 1rem auto;
-    _border: 5px solid black;
-    box-sizing: border-box;
+  width: 95vw;
+  margin: 1rem auto;
+  _border: 5px solid black;
+  box-sizing: border-box;
 
-    .my-rows {
+  .my-rows {
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+
+    .my-cols {
+      width: 33%;
+      padding: 0.5rem;
+      margin: 0.1rem;
+      @media (max-width: 1440px) {
+        width: 49%;
+      }
+      @media (max-width: 414px) {
         width: 100%;
-        _background-color: chocolate;
+        padding: 0;
+      }
+
+      .my-cards {
+        width: 100%;
         padding: 1rem;
-        display: flex;
-        flex-wrap: wrap;
+        border: 1px solid lightgray;
+        border-radius: 0.3rem;
 
-        .my-cols {
-            width: 33%;
-            padding: .5rem;
-            margin: .1rem;
-            _background-color: aqua;
-            @media(max-width: 1440px){
-                width: 49%;
-            }
-            @media(max-width: 414px){
-                width: 100%;
-                padding: 0;
-            }
-
-            .my-cards {
-                width: 100%;
-                padding: 1rem;
-                border: 1px solid lightgray;
-                border-radius: .3rem;
-
-                _background-color: cornflowerblue;
-
-                h4 {
-                    margin-top: 1rem;
-                }
-
-                button {
-                    transition: all 0.2s ease;
-
-                    &:active {
-                        transform: scale(0.86);
-                        opacity: .9;
-                    }
-                }
-            }
+        h4 {
+          margin-top: 1rem;
         }
+
+        #button {
+          transition: all 0.2s ease;
+          color: #fff;
+          padding: 8px 22px;
+          border-radius: 6px;
+          border: none;
+          background: #7d2ae8;
+          &:active {
+            transform: scale(0.86);
+            opacity: 0.9;
+          }
+        }
+      }
     }
+  }
 }
 
 img {
-    width: 100%;
-    height: auto;
-    border-radius: .3rem;
+  width: 100%;
+  height: auto;
+  border-radius: 0.3rem;
 }
