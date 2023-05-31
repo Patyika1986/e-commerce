@@ -9,12 +9,14 @@ import { OverviewComponent } from './component/overview/overview.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatBadgeModule} from '@angular/material/badge';
 import { GaleryComponent } from './component/galery/galery.component';
+import { ProductsComponent } from './products/products/products.component';
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
     OverviewComponent,
-    GaleryComponent
+    GaleryComponent,
+    ProductsComponent
   ],
   imports: [
     BrowserModule,

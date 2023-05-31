@@ -14,6 +14,13 @@ const routes: Routes = [
         (dataStore) => dataStore.DataStroreModule
       ),
   },
+  {
+    path: 'products',
+    loadChildren: () =>
+      import('./products/products.module').then(
+        (products) => products.ProductsModule
+      ),
+  },
 ];
 
 @NgModule({
