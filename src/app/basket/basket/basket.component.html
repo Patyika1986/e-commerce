@@ -1,0 +1,58 @@
+<app-nav></app-nav>
+
+<div class="wrapper">
+  <div class="container mt-5">
+    <div class="row mb-3 my-row" *ngFor="let item of items">
+      <div class="col-6">
+        <div class="card">
+          <img src="{{ item.img }}" alt="" />
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="item-description">
+          <h4>{{ item.name }}</h4>
+          <p>{{ item.price }} €</p>
+          <hr />
+          <p>Please select a size that is in stock</p>
+          <div class="col-12 d-flex">
+            <div
+              class="sizes rounded-1"
+              *ngFor="let size of sizes; let id"
+              (click)="selectSize(id)"
+            >
+              {{ size }}
+            </div>
+          </div>
+          <div class="container box text-center">
+            <div class="row mt-3">
+              <div class="col-1 border rounded-1 p-3 text-center fw-bold">
+                {{ dataFacadeStorage.cartItems() }}
+              </div>
+              <div class="col-3">
+                <button
+                  id="increment"
+                  class="p-3 fw-bold rounded-1"
+                  (click)="increment()"
+                >
+                  +
+                </button>
+                <button
+                  id="decrease"
+                  class="p-3 fw-bold rounded-1"
+                  (click)="decrease()"
+                >
+                  -
+                </button>
+              </div>
+              <div class="col-7">
+                <button class="p-3 fw-bold rounded-1 cart-btn">
+                  In the shopping cart
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

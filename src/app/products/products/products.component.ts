@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { DataFacadeStorage } from 'src/app/data-strore/data-facade-storage';
 import { DataStoreService } from 'src/app/data-strore/data-store.service';
 
@@ -8,7 +9,7 @@ import { DataStoreService } from 'src/app/data-strore/data-store.service';
   styleUrls: ['./products.component.scss']
 })
 export class ProductsComponent {
-  constructor(private dataStoreSevice: DataStoreService){}
+  constructor(private dataStoreSevice: DataStoreService, private router: Router){}
 
   products:any[] = [];
   ngOnInit(): void {
@@ -25,6 +26,10 @@ export class ProductsComponent {
 
   addToBasket(item:any){
     console.log(item);
-    
+    this.dataStoreSevice.addToBasket(item).subscribe(list => {
+      console.log(list,'lsit');
+      
+    })
+    this.router.navigate(['basket']);
   }
 }

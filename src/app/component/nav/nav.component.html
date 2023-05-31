@@ -42,7 +42,7 @@
               (click)="toggleBadgeVisibility()"
               id="cart"
               mat-raised-button
-              [matBadge]="cartItem"
+              [matBadge]="dataFacadeStorage.cartItems()"
               matBadgePosition="after"
               matBadgeColor="accent"
             >

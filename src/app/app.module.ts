@@ -7,22 +7,29 @@ import { HttpClientModule } from '@angular/common/http';
 import { NavComponent } from './component/nav/nav.component';
 import { OverviewComponent } from './component/overview/overview.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatBadgeModule} from '@angular/material/badge';
+import { MatBadgeModule } from '@angular/material/badge';
 import { GaleryComponent } from './component/galery/galery.component';
 import { ProductsComponent } from './products/products/products.component';
+import { RouterModule } from '@angular/router';
+import { BasketComponent } from './basket/basket/basket.component';
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
     OverviewComponent,
     GaleryComponent,
-    ProductsComponent
+    ProductsComponent,
+    BasketComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule, 
-    HttpClientModule, BrowserAnimationsModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
     MatBadgeModule
+  ],
+  exports: [
+
   ],
   providers: [],
   bootstrap: [AppComponent]
