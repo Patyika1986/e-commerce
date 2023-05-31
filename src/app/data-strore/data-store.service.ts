@@ -20,4 +20,18 @@ export class DataStoreService {
       { headers }
     );
   }
+
+  getItems():Observable<any>{
+    
+
+    return this.http.get('https://e-commerce-294cd-default-rtdb.firebaseio.com/products.json').pipe(map((res:any) => {
+      const products = [];
+      for(const key in res){
+        if(res.hasOwnProperty(key)){
+          products.push({...res[key], id:key});
+        }
+      }
+      return products;
+    }));
+  }
 }

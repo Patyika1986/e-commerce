@@ -19,8 +19,9 @@
             @media(max-width: 1440px){
                 width: 49%;
             }
-            @media(max-width: 378px){
-                width: 48%;
+            @media(max-width: 414px){
+                width: 100%;
+                padding: 0;
             }
 
             .my-cards {
