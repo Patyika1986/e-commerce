@@ -1,5 +1,5 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Injectable, OnDestroy } from '@angular/core';
+import { Injectable, OnDestroy, signal } from '@angular/core';
 import { map, Observable } from 'rxjs';
 
 @Injectable({
@@ -8,6 +8,7 @@ import { map, Observable } from 'rxjs';
 export class DataStoreService {
   constructor(private http: HttpClient) {}
 
+  products = signal<any[]>([])
 
   postProduct(item: any): Observable<any> {
     const headers = new HttpHeaders({
@@ -19,6 +20,7 @@ export class DataStoreService {
       item,
       { headers }
     );
+
   }
 
   getItems():Observable<any>{

@@ -1,4 +1,4 @@
-import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, OnInit, SimpleChanges } from '@angular/core';
 import { DataFacadeStorage } from 'src/app/data-strore/data-facade-storage';
 import { DataStoreService } from 'src/app/data-strore/data-store.service';
 
@@ -7,44 +7,48 @@ import { DataStoreService } from 'src/app/data-strore/data-store.service';
   templateUrl: './basket.component.html',
   styleUrls: ['./basket.component.scss'],
 })
-export class BasketComponent implements OnInit, OnChanges {
+export class BasketComponent implements OnInit {
   constructor(
-    private dataStoregeService: DataStoreService,
+    public dataStoregeService: DataStoreService,
     public dataFacadeStorage: DataFacadeStorage
   ) {}
 
-  items: any[] = [];
-  sizes: any[] = [];
+  public items: any[] = [];
+  public sizes: any[] = [];
+  public itemCount: number = 0;
+  public selectedelement: any;
+
   ngOnInit(): void {
-   this.loadItems();
+    this.loadBasketItems();
   }
 
-  ngOnChanges(changes: SimpleChanges): void {
-    console.log(changes,'changes');
-    
-this.loadItems();
-  }
-
-
-  loadItems(){
-    this.dataStoregeService.getItemsFromBasket().subscribe((items) => {
-      this.items = items;
+  loadBasketItems(){
+    this.dataFacadeStorage.getItemsFromBasket();
+    this.dataFacadeStorage.basket$.subscribe((list) => {
+      this.items = list;
       for (const size of this.items) {
         this.sizes = size.sizes;
-        console.log(size);
       }
     });
   }
 
   selectSize(size: any) {
+    this.selectedelement = size;
     console.log(size);
   }
 
+  addToCart(product: any) {
+    console.log(product);
+  }
+
   increment() {
-    this.dataFacadeStorage.cartItems.update((count) => (count += 1));
+    this.itemCount += 1;
+    // this.dataFacadeStorage.cartItems.update((count) => (count += 1));
   }
 
   decrease() {
-    this.dataFacadeStorage.cartItems.update((count) => (count -= 1));
+    this.itemCount -= 1;
+
+    // this.dataFacadeStorage.cartItems.update((count) => (count -= 1));
   }
 }

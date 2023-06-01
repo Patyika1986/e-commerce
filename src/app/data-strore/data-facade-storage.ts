@@ -14,6 +14,10 @@ export class DataFacadeStorage {
 
   private _products$ = new BehaviorSubject<[]>([]);
   public products$: Observable<[]> = this._products$.asObservable();
+
+  private _basket$ = new BehaviorSubject<[]>([]);
+  public basket$: Observable<[]> = this._basket$.asObservable();
+
   public cartItems = signal(0);
 
  private subscribtions$ = new Subject();
@@ -21,7 +25,15 @@ export class DataFacadeStorage {
   addItem(item:any): void {
     this.dataStoreService.postProduct(item).pipe(takeUntil(this.subscribtions$)).subscribe(itemData => {
         this._products$.next(itemData);
-    })
+    });
   }
+
+  getItemsFromBasket(): void {
+    this.dataStoreService.getItemsFromBasket().pipe(takeUntil(this.subscribtions$)).subscribe(itemData => {
+        this._basket$.next(itemData);
+    });
+  }
+
+
 
 }
