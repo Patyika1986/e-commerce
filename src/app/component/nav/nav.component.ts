@@ -17,9 +17,7 @@ export class NavComponent implements OnInit {
   cartItem = 0;
 
   ngOnInit(): void {
-    this.dataStoreService.getItemsFromBasket().subscribe((list) => {
-      this.dataFacadeStorage.cartItems.update((count) => (count = list.length));
-    });
+
   }
   toggleBadgeVisibility() {
     this.router.navigate(['basket'])

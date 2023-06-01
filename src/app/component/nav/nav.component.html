@@ -28,10 +28,7 @@
           >
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Overview</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Shoes</a>
+          <a class="nav-link" routerLink="/overview">Overview</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Shoes</a>
@@ -42,7 +39,7 @@
               (click)="toggleBadgeVisibility()"
               id="cart"
               mat-raised-button
-              [matBadge]="dataFacadeStorage.cartItems()"
+              [matBadge]="cartItem"
               matBadgePosition="after"
               matBadgeColor="accent"
             >
