@@ -16,7 +16,7 @@
             <div
               class="size"
               *ngFor="let size of sizes"
-              (click)="selectSize(size)"
+              (click)="selectSize(size, item)"
             >
               {{ size }}
             </div>
@@ -25,7 +25,7 @@
             <div class="count">{{ itemCount }}</div>
             <div class="button-box">
               <button id="increment" (click)="increment(item)">+</button>
-              <button id="decrease" (click)="decrease()">-</button>
+              <button id="decrease" (click)="decrease(item)">-</button>
             </div>
             <button id="add-to-cart" (click)="addToCart(i)">
               In the shopping cart

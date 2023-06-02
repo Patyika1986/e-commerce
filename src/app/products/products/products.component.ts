@@ -20,11 +20,15 @@ export class ProductsComponent implements OnInit {
 
   ngOnInit(): void {
     this.dataStoreSevice.getItems().subscribe(list => {
+      console.log(list,'list');
+      
       list.map((data:any) => {
         for(const listItems of data.product){
+          console.log(listItems);
           this.products.push(listItems)
         }
       });
+      
     });
   }
 

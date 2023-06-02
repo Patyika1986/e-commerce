@@ -1,7 +1,7 @@
-import { Component, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DataFacadeStorage } from 'src/app/data-strore/data-facade-storage';
 import { DataStoreService } from 'src/app/data-strore/data-store.service';
-import { Subject, map, takeUntil } from 'rxjs';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-basket',
@@ -19,12 +19,22 @@ export class BasketComponent implements OnInit {
   public itemCount: number = 0;
   public selectedelement: any;
   public subscribtion$ = new Subject();
+
+  public cartItems: any[] = [
+    {
+      amount: 0,
+      deliveryTime: 0,
+      id: '',
+      img: '',
+      isSale: false,
+      name: '',
+      pieces: 0,
+      price: 0,
+      sizes: [0],
+    },
+  ];
+
   ngOnInit(): void {
-    // this.dataFacadeStorage.getItemsFromBasket();
-    // this.dataFacadeStorage.basketItems$.pipe(takeUntil(this.subscribtion$)).subscribe(allBasketItems => {
-    //   console.log(allBasketItems);
-    //   this.items = allBasketItems;
-    // })
     this.dataStoregeService.getItemsFromBasket().subscribe((list) => {
       list.map((data: any) => {
         this.sizes = data.sizes;
@@ -33,50 +43,81 @@ export class BasketComponent implements OnInit {
     });
   }
 
-  loadBasketItems() {
-    // this.dataFacadeStorage.getItemsFromBasket();
-    // this.dataFacadeStorage.basket$.subscribe((list) => {
-    //   this.items = list;
-    //   for (const size of this.items) {
-    //     this.sizes = size.sizes;
-    //   }
-    // });
-  }
-
-  selectSize(size: any) {
+  selectSize(size: any, item: any) {
     this.selectedelement = size;
-    console.log(size);
-  }
-
-  addToCart(product: any) {
-    console.log(product);
+    const itemData = this.dataStoregeService
+      .getItemsFromBasket()
+      .subscribe((list) => {
+        const thisItem = list.find((listItem: any) => listItem.id === item.id);
+        if (thisItem) {
+          this.dataStoregeService
+            .updateItem(item.id, item)
+            .subscribe((list) => {
+              list.sizes = [];
+              list.sizes.push(size);
+              for (const datas of this.cartItems) {
+                datas.sizes = list.sizes;
+              }
+            });
+        }
+      });
   }
 
   increment(item: any) {
     this.itemCount += 1;
-
-    // for(const amount of this.items){
-    //   amount.amount = this.itemCount;
-    //   this.dataFacadeStorage.editItem(amount.id,amount)
-    //   this.dataFacadeStorage.editItem$.subscribe(list => {
-    //     list.amount = this.itemCount;
-    //     console.log(list,'from subscribe');
-
-    //   })
-    // }
-    // console.log(this.items,'items');
+    const countItem = this.dataStoregeService
+      .getItemsFromBasket()
+      .subscribe((list) => {
+        const datas = list.find((listItem: any) => listItem.id === item.id);
+        if (datas) {
+          this.dataStoregeService
+            .updateItem(item.id, item)
+            .subscribe((listdata) => {
+              listdata.amount = this.itemCount;
+              for (const datas of this.cartItems) {
+                datas.amount = listdata.amount;
+              }
+            });
+        }
+      });
   }
 
-  decrease() {
-    if (this.itemCount > 1) {
-      this.itemCount -= 1;
-    } else {
-      this.itemCount = 0;
-    }
+  decrease(item: any) {
+    this.itemCount -= 1;
+    this.dataStoregeService.getItemsFromBasket().subscribe((list) => {
+      const data = list.find((id: any) => id.id === item.id);
+      if (data) {
+        this.dataStoregeService.updateItem(item.id, item).subscribe((list) => {
+          list.amount = this.itemCount;
+          for (const datas of this.cartItems) {
+            datas.amount = list.amount;
+          }
+        });
+      }
+    });
   }
 
-  //   ngOnDestroy(): void {
-  //     this.subscribtion$.next(false);
-  //     this.subscribtion$.complete();
-  // }
+  addToCart(product: any) {
+    this.dataStoregeService.getItemsFromBasket().subscribe((list) => {
+      const data = list.find((item: any) => item.id === product.id);
+      if (data) {
+        this.dataStoregeService
+          .updateItem(product.id, product)
+          .subscribe((liste) => {
+            for (const datas of this.cartItems) {
+              datas.deliveryTime = product.deliveryTime;
+              datas.id = product.id;
+              datas.img = product.img;
+              datas.isSale = product.isSale;
+              datas.name = product.name;
+              datas.pieces = product.pieces;
+              datas.price = product.price;
+            }
+            this.dataStoregeService
+              .addToCart(this.cartItems)
+              .subscribe((list) => {});
+          });
+      }
+    });
+  }
 }
