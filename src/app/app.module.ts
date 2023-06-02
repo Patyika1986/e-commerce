@@ -12,6 +12,7 @@ import { GaleryComponent } from './component/galery/galery.component';
 import { ProductsComponent } from './products/products/products.component';
 import { RouterModule } from '@angular/router';
 import { BasketComponent } from './basket/basket/basket.component';
+import { ToPaymentComponent } from './to-payment/to-payment/to-payment.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +20,8 @@ import { BasketComponent } from './basket/basket/basket.component';
     OverviewComponent,
     GaleryComponent,
     ProductsComponent,
-    BasketComponent
+    BasketComponent,
+    ToPaymentComponent
   ],
   imports: [
     BrowserModule,

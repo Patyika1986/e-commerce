@@ -88,6 +88,8 @@
               margin-right: 0.3rem;
               transition: all 0.2s ease;
               border: 1px solid lightgray;
+              background-color: var(--black-color);
+              color: var(--white-color);
 
               &:active {
                 transform: scale(0.86);
@@ -101,9 +103,13 @@
             border: none;
             transition: all 0.2s ease;
             border: 1px solid lightgray;
+            background-color: var(--purple-color);
+            color: var(--white-color);
+            font-weight: 400;
+            word-spacing: 2px;
 
             &:active {
-              transform: scale(0.86);
+              transform: scale(0.96);
               opacity: 0.9;
             }
           }
@@ -121,6 +127,39 @@
     }
   }
 }
+
+.paymant-box{
+  width: 45vw;
+  padding: 1rem;
+  margin: 1rem auto;
+  display: flex;
+  justify-content: center;
+  @media (max-width: 786px) {
+    width: 75%;
+  }
+  @media (max-width: 500px) {
+    width: 99%;
+  }
+
+  #to-payment {
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    font-weight: var(--font-weight-m);
+    transition: all 0.2s ease;
+    border: 1px solid lightgray;
+    background-color: var(--light-green);
+    word-spacing: 2px;
+
+
+    &:active {
+      transform: scale(0.96);
+      opacity: 0.9;
+    }
+  }
+}
+
+
 
 img {
   width: 100%;
