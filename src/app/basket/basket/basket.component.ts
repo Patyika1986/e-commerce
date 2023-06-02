@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DataFacadeStorage } from 'src/app/data-strore/data-facade-storage';
 import { DataStoreService } from 'src/app/data-strore/data-store.service';
 import { Subject } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-basket',
@@ -11,7 +12,8 @@ import { Subject } from 'rxjs';
 export class BasketComponent implements OnInit {
   constructor(
     public dataStoregeService: DataStoreService,
-    public dataFacadeStorage: DataFacadeStorage
+    public dataFacadeStorage: DataFacadeStorage,
+    private router: Router
   ) {}
 
   public items: any[] = [];
@@ -119,5 +121,9 @@ export class BasketComponent implements OnInit {
           });
       }
     });
+  }
+
+  navigationToPamyment(){
+    this.router.navigate(['to-payment']);
   }
 }

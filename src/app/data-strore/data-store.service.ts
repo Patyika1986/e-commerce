@@ -90,6 +90,27 @@ export class DataStoreService {
     );
   }
 
+  getAllItemsFromCart(): Observable<any> {
+    return this.http
+      .get('https://e-commerce-294cd-default-rtdb.firebaseio.com/cart.json')
+      .pipe(
+        map((res: any) => {
+          const products = [];
+          for (const key in res) {
+            if (res.hasOwnProperty(key)) {
+              products.push({ ...res[key], id: key });
+            }
+          }
+          return products;
+        })
+      );
+  }
+
+
+  removeItem(id:string,item:any):Observable<any>{
+    return this.http.delete('https://e-commerce-294cd-default-rtdb.firebaseio.com/cart/'+id+'.json',item);
+  }
+
   // postProduct(item: any): Observable<any> {
   //   const headers = new HttpHeaders({
   //     'Content-Type': 'application/json',

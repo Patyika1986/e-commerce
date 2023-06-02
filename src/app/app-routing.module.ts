@@ -3,10 +3,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { NavComponent } from './component/nav/nav.component';
 import { OverviewComponent } from './component/overview/overview.component';
 import { BasketComponent } from './basket/basket/basket.component';
+import { ToPaymentComponent } from './to-payment/to-payment/to-payment.component';
 
 const routes: Routes = [
   { path: 'overview',component: OverviewComponent},
   { path: 'basket', component:BasketComponent },
+  { path: 'to-payment', component:ToPaymentComponent },
 
   { path: '',redirectTo:'overview',pathMatch:'full'},
   { path: '', component: NavComponent},
@@ -29,6 +31,13 @@ const routes: Routes = [
     loadChildren: () =>
       import('./basket/basket.module').then(
         (basket) => basket.BasketModule
+      ),
+  },
+  {
+    path: 'to-payment',
+    loadChildren: () =>
+      import('./to-payment/to-payment.module').then(
+        (toPaymant) => toPaymant.ToPaymentModule
       ),
   },
 ];

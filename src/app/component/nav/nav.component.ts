@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { DataFacadeStorage } from 'src/app/data-strore/data-facade-storage';
 import { DataStoreService } from 'src/app/data-strore/data-store.service';
 
 @Component({
@@ -10,16 +9,19 @@ import { DataStoreService } from 'src/app/data-strore/data-store.service';
 })
 export class NavComponent implements OnInit {
   constructor(
-    public dataFacadeStorage: DataFacadeStorage,
-    private dataStoreService: DataStoreService,
+    public dataStoreService: DataStoreService,
     private router: Router
   ) {}
+
   cartItem = 0;
 
   ngOnInit(): void {
+    this.dataStoreService.getAllItemsFromCart().subscribe(items => {
+      this.cartItem = items.length;
+    })
 
   }
   toggleBadgeVisibility() {
-    this.router.navigate(['basket'])
+    this.router.navigate(['basket']);
   }
 }
