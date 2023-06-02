@@ -107,8 +107,11 @@ export class DataStoreService {
   }
 
 
-  removeItem(id:string,item:any):Observable<any>{
-    return this.http.delete('https://e-commerce-294cd-default-rtdb.firebaseio.com/cart/'+id+'.json',item);
+  removeItem(id:string):Observable<any>{
+
+    return this.http.delete('https://e-commerce-294cd-default-rtdb.firebaseio.com/cart/'+id+'.json');
+
+
   }
 
   // postProduct(item: any): Observable<any> {

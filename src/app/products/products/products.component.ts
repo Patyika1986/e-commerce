@@ -19,22 +19,18 @@ export class ProductsComponent implements OnInit {
   public products: ProductsInterface[] = [];
 
   ngOnInit(): void {
-    this.dataStoreSevice.getItems().subscribe(list => {
-      console.log(list,'list');
-      
-      list.map((data:any) => {
-        for(const listItems of data.product){
-          console.log(listItems);
-          this.products.push(listItems)
+    this.dataStoreSevice.getItems().subscribe((list) => {
+      list.map((data: any) => {
+        for (const listItems of data.product) {
+          this.products.push(listItems);
         }
       });
-      
     });
   }
 
   addToBasket(item: any) {
-    this.dataStoreSevice.addToBasket(item).subscribe(list => {
-     this.router.navigate(['basket']);
+    this.dataStoreSevice.addToBasket(item).subscribe((list) => {
+      this.router.navigate(['basket']);
     });
   }
 }
