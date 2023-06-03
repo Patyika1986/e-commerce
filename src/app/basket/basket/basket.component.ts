@@ -56,6 +56,8 @@ export class BasketComponent implements OnInit {
             .updateItem(item.id, item)
             .subscribe((list) => {
               list.sizes = [];
+              this.sizes = [];
+              this.sizes.push(list.sizes);
               list.sizes.push(size);
               for (const datas of this.cartItems) {
                 datas.sizes = list.sizes;
@@ -124,6 +126,7 @@ export class BasketComponent implements OnInit {
   }
 
   navigationToPamyment(){
+    this.dataStoregeService.deleteAllBasketItems().subscribe();
     this.router.navigate(['to-payment']);
   }
 }

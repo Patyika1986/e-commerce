@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { DataStoreService } from 'src/app/data-strore/data-store.service';
+import { map } from 'rxjs';
 
 @Component({
   selector: 'app-to-payment',
@@ -16,9 +17,12 @@ export class ToPaymentComponent implements OnInit {
   public cartItems: any[] = [];
   public total: number = 0;
   public price: number = 0;
+  public item:any;
 
   ngOnInit(): void {
     this.dataStoreService.getAllItemsFromCart().subscribe((list) => {
+      console.log(list);
+      
       list.map((data: any) => {
         data[0].price *= data[0].amount;
         this.cartItems.push(data[0]);
@@ -30,20 +34,14 @@ export class ToPaymentComponent implements OnInit {
       });
       allPrice.map((x) => (this.total += x));
       this.total.toFixed(2);
-      console.log(this.total);
     });
   }
 
-  itemToRemove(id: any) {
-    this.dataStoreService.getAllItemsFromCart().subscribe((list) => {
-      console.log(list[0].id);
+  itemToRemove(id:any) {
+    this.dataStoreService.getAllItemsFromCart().subscribe(list => {
       this.dataStoreService.removeItem(list[0].id).subscribe();
-      if (list) {
-        const del = this.cartItems.find((x) => x.id === id);
-        for (const data of this.cartItems) {
-          this.cartItems.splice(data, 1);
-        }
-      }
+      const element = this.cartItems.find(item => item.id === id.id);
+      this.cartItems.splice(element,1)
     });
   }
 
@@ -51,7 +49,7 @@ export class ToPaymentComponent implements OnInit {
     return this.http
       .delete('https://e-commerce-294cd-default-rtdb.firebaseio.com/cart.json')
       .subscribe(() => {
-        // this.cartItems = [];
+        this.cartItems = [];
       });
   }
 }

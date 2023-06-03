@@ -106,12 +106,27 @@ export class DataStoreService {
       );
   }
 
+  removeItem(id: string): Observable<any> {
+    return this.http
+      .delete(
+        `https://e-commerce-294cd-default-rtdb.firebaseio.com/cart/${id}.json`)
+      .pipe(
+        map((res: any) => {
+          const products = [];
+          for (const key in res) {
+            if (res.hasOwnProperty(key)) {
+              products.push({ ...res[key], id: key });
+            }
+          }
+          return products;
+        })
+      );
+  }
 
-  removeItem(id:string):Observable<any>{
-
-    return this.http.delete('https://e-commerce-294cd-default-rtdb.firebaseio.com/cart/'+id+'.json');
-
-
+  deleteAllBasketItems(): Observable<any> {
+    return this.http.delete(
+      'https://e-commerce-294cd-default-rtdb.firebaseio.com/basket.json'
+    );
   }
 
   // postProduct(item: any): Observable<any> {
