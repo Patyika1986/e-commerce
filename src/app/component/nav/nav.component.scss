@@ -28,3 +28,61 @@ img {
     font-weight: var(--font-weight-m);
     background-color: transparent;
 }
+
+.wrapper {
+    width: 95vw;
+    margin:  auto;
+    _border: 5px solid black;
+    box-sizing: border-box;
+  
+    .my-rows {
+      width: 100%;
+      padding: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+  
+      .my-cols {
+        width: 33%;
+        padding: 0.5rem;
+        margin: 0.1rem;
+        @media (max-width: 1440px) {
+          width: 49%;
+        }
+        @media (max-width: 414px) {
+          width: 100%;
+          padding: 0;
+        }
+  
+        .my-cards {
+          width: 100%;
+          padding: 1rem;
+          border: 1px solid lightgray;
+          border-radius: 0.3rem;
+
+          img {
+            width: 100%;
+            height: auto;
+            border-radius: 0.3rem;
+          }
+  
+          h4 {
+            margin-top: 1rem;
+          }
+  
+          #button {
+            transition: all 0.2s ease;
+            color: #fff;
+            padding: 8px 22px;
+            border-radius: 6px;
+            border: none;
+            background: var(--purple-color);
+            &:active {
+              transform: scale(0.86);
+              opacity: 0.9;
+            }
+          }
+        }
+      }
+    }
+  }
+  

@@ -14,13 +14,37 @@ export class NavComponent implements OnInit {
   ) {}
 
   cartItem = 0;
+  dataItems: any;
+  item: any;
+
+  findItem: any[] = [];
 
   ngOnInit(): void {
-    this.dataStoreService.getAllItemsFromCart().subscribe(items => {
+    this.dataStoreService.getAllItemsFromCart().subscribe((items) => {
       this.cartItem = items.length;
-    })
-
+    });
   }
+
+  addToBasket(item: any) {
+    this.dataStoreService.addToBasket(item).subscribe((list) => {
+      this.router.navigate(['basket']);
+    });
+  }
+
+  searchItem(item: any) {
+    let search = item.value.toLowerCase();
+
+    this.dataStoreService.getItems().subscribe((list) => {
+      list.map((data: any) => {
+        this.dataItems = data.product;
+        const res = data.product.filter((obj: any) =>
+          obj.name.toLowerCase().includes(search)
+        );
+        this.findItem = res;
+      });
+    });
+  }
+
   toggleBadgeVisibility() {
     this.router.navigate(['basket']);
   }

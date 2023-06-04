@@ -31,7 +31,7 @@
           <a class="nav-link" routerLink="/overview">Overview</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Shoes</a>
+          <a class="nav-link">Shoes</a>
         </li>
         <li class="nav-item">
           <div class="demo-section">
@@ -48,15 +48,27 @@
           </div>
         </li>
       </ul>
-      <form class="d-flex" role="search">
+      <div class="d-flex">
         <input
           class="form-control me-2"
-          type="search"
+          type="text"
           placeholder="Search"
-          aria-label="Search"
+          (keyup)="searchItem($event.target)"
         />
-        <button class="btn" type="submit">Search</button>
-      </form>
+      </div>
     </div>
   </div>
 </nav>
+
+<div class="wrapper">
+  <div class="my-rows">
+    <div class="my-cols" *ngFor="let items of findItem; let item">
+      <div class="my-cards">
+        <img src="{{ items.img }}" alt="" />
+        <h4>{{ items.name }}</h4>
+        <p>{{ items.price }}€</p>
+        <button id="button" (click)="addToBasket(item)">Buy</button>
+      </div>
+    </div>
+  </div>
+</div>

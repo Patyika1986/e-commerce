@@ -13,6 +13,7 @@ import { ProductsComponent } from './products/products/products.component';
 import { RouterModule } from '@angular/router';
 import { BasketComponent } from './basket/basket/basket.component';
 import { ToPaymentComponent } from './to-payment/to-payment/to-payment.component';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,11 +28,12 @@ import { ToPaymentComponent } from './to-payment/to-payment/to-payment.component
     BrowserModule,
     AppRoutingModule, 
     HttpClientModule,
+    FormsModule,
     BrowserAnimationsModule,
     MatBadgeModule
   ],
   exports: [
-
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
