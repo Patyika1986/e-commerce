@@ -1,0 +1,32 @@
+.wrapper {
+    width: 100vw;
+    background-color: var(--black-color);
+    box-sizing: border-box;
+    #footer {
+        padding: 1rem 0;
+        .row {
+
+            @media(max-width: 768px){
+                flex-direction: column;
+            }
+            .col{
+                ul{
+
+                    li{
+                        list-style: none;
+                        a{
+                            text-decoration: none;
+                            color: var(--white-color);
+
+                            &:hover{
+                                text-decoration: underline;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+}
