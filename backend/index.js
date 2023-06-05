@@ -38,7 +38,7 @@ app.get("/api/login", (req, res, next) => {
   res.send(usersRegisterBank);
 });
 
-app.post("/api/login/", (req, res, next) => {
+app.post("https://e-commerce-liard-pi.vercel.app/login", (req, res, next) => {
   let id = uuidv4();
   console.log(res.body);
   console.log(req.body);
@@ -46,11 +46,11 @@ app.post("/api/login/", (req, res, next) => {
   res.send(data);
 });
 
-app.put("/api/login", (req, res, next) => {
+app.put("https://e-commerce-liard-pi.vercel.app/login", (req, res, next) => {
   res.send('Put');
 });
 
-app.delete("/api/login", (req, res, next) => {
+app.delete("https://e-commerce-liard-pi.vercel.app/login", (req, res, next) => {
   res.send('Delete');
 });
 
