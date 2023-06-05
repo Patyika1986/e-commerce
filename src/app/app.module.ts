@@ -14,6 +14,7 @@ import { RouterModule } from '@angular/router';
 import { BasketComponent } from './basket/basket/basket.component';
 import { ToPaymentComponent } from './to-payment/to-payment/to-payment.component';
 import { FormsModule } from '@angular/forms';
+import { SubscribeEmailComponent } from './subscribe-email/subscribe-email/subscribe-email.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +23,8 @@ import { FormsModule } from '@angular/forms';
     GaleryComponent,
     ProductsComponent,
     BasketComponent,
-    ToPaymentComponent
+    ToPaymentComponent,
+    SubscribeEmailComponent
   ],
   imports: [
     BrowserModule,

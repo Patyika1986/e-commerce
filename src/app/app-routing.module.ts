@@ -40,6 +40,13 @@ const routes: Routes = [
         (toPaymant) => toPaymant.ToPaymentModule
       ),
   },
+  {
+    path: 'sub-email',
+    loadChildren: () =>
+      import('./subscribe-email/subscribe-email.module').then(
+        (subEmail) => subEmail.SubscribeEmailModule
+      ),
+  },
 ];
 
 @NgModule({
