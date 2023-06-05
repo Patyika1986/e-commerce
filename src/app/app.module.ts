@@ -16,6 +16,7 @@ import { ToPaymentComponent } from './to-payment/to-payment/to-payment.component
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SubscribeEmailComponent } from './subscribe-email/subscribe-email/subscribe-email.component';
 import { FooterComponent } from './component/footer/footer.component';
+import { LoginComponent } from './login/login/login.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +27,8 @@ import { FooterComponent } from './component/footer/footer.component';
     BasketComponent,
     ToPaymentComponent,
     SubscribeEmailComponent,
-    FooterComponent
+    FooterComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

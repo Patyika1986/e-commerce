@@ -1,33 +1,41 @@
 <app-nav></app-nav>
-<div class="container mt-5">
-  <div class="list-group m-2" *ngFor="let items of cartItems; let id">
-    <div class="list-group-item list-group-item-action">
-      <h5 class="mb-2">{{ items.name }}</h5>
-      <div class="d-flex w-100 justify-content-flex-start">
-        <img src="{{ items.img }}" alt="" />
+<div class="wrapper">
+  <div class="container p-5">
+    <div class="list-group m-2" *ngFor="let items of cartItems; let id">
+      <div class="list-group-item list-group-item-action">
+        <h5 class="mb-2">{{ items.name }}</h5>
+        <div class="d-flex w-100 justify-content-flex-start">
+          <img src="{{ items.img }}" alt="" />
+        </div>
+        <p class="mb-2 mt-2">Delivery time {{ items.deliveryTime }}</p>
+        <p class="mb-2 mt-2">Pieces {{ items.amount }}</p>
+        <p class="mb-2 mt-2">Size {{ items.sizes }}</p>
+        <p class="mb-2 mt-2">Price {{ items.price }} €</p>
+        <button class="btn btn-danger" (click)="itemToRemove(id)">
+          Delete
+        </button>
       </div>
-      <p class="mb-2 mt-2">Delivery time {{ items.deliveryTime }}</p>
-      <p class="mb-2 mt-2">Pieces {{ items.amount }}</p>
-      <p class="mb-2 mt-2">Size {{ items.sizes }}</p>
-      <p class="mb-2 mt-2">Price {{ items.price }} €</p>
-      <button class="btn btn-danger" (click)="itemToRemove(id)">Delete</button>
     </div>
-  </div>
 
-  <div class="row mx-1">
-    <div class="col">
-      <h4>Total Price {{ total }}€</h4>
+    <div class="row mx-1">
+      <div class="col">
+        <h4>Total Price {{ total }}€</h4>
+      </div>
     </div>
-  </div>
 
-  <div class="row mx-1">
-    <div class="col">
-      <button class="btn btn-success">Order now</button>
+    <div class="row mx-1">
+      <div class="col">
+        <button class="btn btn-success order" (click)="navigateToLogin()">
+          Order now
+        </button>
+      </div>
     </div>
-  </div>
-  <div class="row mx-1 mt-2">
-    <div class="col">
-      <button class="btn btn-danger" (click)="clearAll()">Clear all</button>
+    <div class="row mx-1 mt-2">
+      <div class="col-12">
+        <button class="btn btn-danger" (click)="clearAll()">
+          Clear all items
+        </button>
+      </div>
     </div>
   </div>
 </div>

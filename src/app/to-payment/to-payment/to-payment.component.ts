@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { DataStoreService } from 'src/app/data-strore/data-store.service';
 import { map } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-to-payment',
@@ -11,7 +12,8 @@ import { map } from 'rxjs';
 export class ToPaymentComponent implements OnInit {
   constructor(
     private dataStoreService: DataStoreService,
-    private http: HttpClient
+    private http: HttpClient,
+    private route: Router
   ) {}
 
   public cartItems: any[] = [];
@@ -51,5 +53,9 @@ export class ToPaymentComponent implements OnInit {
       .subscribe(() => {
         this.cartItems = [];
       });
+  }
+
+  navigateToLogin(){
+    this.route.navigate(['login']);
   }
 }

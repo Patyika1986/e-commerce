@@ -1,0 +1,46 @@
+<app-nav></app-nav>
+<div class="wrapper">
+  <div class="container">
+    <form [formGroup]="form" (ngSubmit)="login()" id="form">
+      <div class="row mb-4">
+        <div class="col">
+          <h1>Login</h1>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-6">
+          <label class="form-label">E-Mail</label>
+          <input
+            type="email"
+            class="form-control"
+            name="email"
+            formControlName="email"
+            placeholder="Enter your email adress"
+          />
+        </div>
+      </div>
+      <div class="row mt-2 mb-3">
+        <div class="col-6">
+          <label class="form-label">Password</label>
+          <input
+            type="password"
+            class="form-control"
+            name="password"
+            formControlName="password"
+            placeholder="Enter your password"
+          />
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col">
+          <a href="#">Create account</a>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col">
+          <button class="btn btn-success" type="submit">Login</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

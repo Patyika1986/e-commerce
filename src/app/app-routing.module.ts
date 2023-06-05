@@ -4,11 +4,13 @@ import { NavComponent } from './component/nav/nav.component';
 import { OverviewComponent } from './component/overview/overview.component';
 import { BasketComponent } from './basket/basket/basket.component';
 import { ToPaymentComponent } from './to-payment/to-payment/to-payment.component';
+import { LoginComponent } from './login/login/login.component';
 
 const routes: Routes = [
   { path: 'overview',component: OverviewComponent},
   { path: 'basket', component:BasketComponent },
   { path: 'to-payment', component:ToPaymentComponent },
+  { path: 'login', component:LoginComponent },
 
   { path: '',redirectTo:'overview',pathMatch:'full'},
   { path: '', component: NavComponent},
@@ -45,6 +47,13 @@ const routes: Routes = [
     loadChildren: () =>
       import('./subscribe-email/subscribe-email.module').then(
         (subEmail) => subEmail.SubscribeEmailModule
+      ),
+  },
+  {
+    path: 'login',
+    loadChildren: () =>
+      import('./login/login.module').then(
+        (login) => login.LoginModule
       ),
   },
 ];
