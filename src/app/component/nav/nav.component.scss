@@ -24,7 +24,7 @@ img {
 #cart {
     border: none;
     margin-top: .5rem;
-    color: var(--light-green);
+    color: var(--purple-color);
     font-weight: var(--font-weight-m);
     background-color: transparent;
 }
@@ -32,7 +32,6 @@ img {
 .wrapper {
     width: 95vw;
     margin:  auto;
-    _border: 5px solid black;
     box-sizing: border-box;
   
     .my-rows {
@@ -85,4 +84,4 @@ img {
       }
     }
   }
-  
+
