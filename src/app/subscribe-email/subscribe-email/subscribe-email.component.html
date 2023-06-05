@@ -1,1 +1,67 @@
-<p>subscribe-email works!</p>
+<!-- <div class="container bg-light border"></div> -->
+
+<div class="wrapper">
+  <div class="container text-center p-3">
+    <h1>Be the first to know</h1>
+    <p>
+      Sign up now and get all the latest JD Sports news on products and offers.
+    </p>
+    <div class="row">
+      <div class="col">
+        <form [formGroup]="form" (ngSubmit)="subscribeEmail()">
+          <input
+            type="email"
+            class="form-control"
+            placeholder="Enter a valid email address"
+            formControlName="email"
+          />
+          <button
+            class="btn btn-primary mt-3"
+            data-bs-toggle="modal"
+            data-bs-target="#staticBackdrop"
+          >
+            Susbscribe
+          </button>
+        </form>
+      </div>
+    </div>
+    <p>We use your information in accordance with our privacy policy.</p>
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="staticBackdrop"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="staticBackdropLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="staticBackdropLabel">
+              Subscribe newsletter
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">{{ sendEmailText }}</div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+              (click)="resetForm()"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

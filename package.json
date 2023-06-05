@@ -20,7 +20,10 @@
     "@angular/platform-browser": "^16.0.0",
     "@angular/platform-browser-dynamic": "^16.0.0",
     "@angular/router": "^16.0.0",
+    "@emailjs/browser": "^3.11.0",
+    "angular-environment": "^1.0.8",
     "bootstrap": "^5.3.0",
+    "enviroment": "^1.0.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.13.0"

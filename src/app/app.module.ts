@@ -13,7 +13,7 @@ import { ProductsComponent } from './products/products/products.component';
 import { RouterModule } from '@angular/router';
 import { BasketComponent } from './basket/basket/basket.component';
 import { ToPaymentComponent } from './to-payment/to-payment/to-payment.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SubscribeEmailComponent } from './subscribe-email/subscribe-email/subscribe-email.component';
 @NgModule({
   declarations: [
@@ -32,10 +32,12 @@ import { SubscribeEmailComponent } from './subscribe-email/subscribe-email/subsc
     HttpClientModule,
     FormsModule,
     BrowserAnimationsModule,
-    MatBadgeModule
+    MatBadgeModule,
+    ReactiveFormsModule
   ],
   exports: [
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
