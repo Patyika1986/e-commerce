@@ -18,15 +18,6 @@ export class LoginComponent {
 
 
   login(){
-    this.loginService.getAllUsers().subscribe(users => {
-      console.log(users);
-      
-    });
 
-let data = JSON.stringify(this.form.value)
-    this.loginService.isUserLoged(this.form.value).subscribe(user => {
-      console.log(user,'post methode');
-      
-    })
   }
 }
