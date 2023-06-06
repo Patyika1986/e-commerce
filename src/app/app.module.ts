@@ -17,6 +17,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SubscribeEmailComponent } from './subscribe-email/subscribe-email/subscribe-email.component';
 import { FooterComponent } from './component/footer/footer.component';
 import { LoginComponent } from './login/login/login.component';
+import { RegistFormularComponent } from './login/regist-formular/regist-formular.component';
+import { PaymentOverviewComponent } from './component/payment-overview/payment-overview.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +30,9 @@ import { LoginComponent } from './login/login/login.component';
     ToPaymentComponent,
     SubscribeEmailComponent,
     FooterComponent,
-    LoginComponent
+    LoginComponent,
+    RegistFormularComponent,
+    PaymentOverviewComponent
   ],
   imports: [
     BrowserModule,

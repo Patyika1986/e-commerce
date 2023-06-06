@@ -46,6 +46,6 @@ export class NavComponent implements OnInit {
   }
 
   toggleBadgeVisibility() {
-    this.router.navigate(['basket']);
+    this.router.navigate(['to-payment']);
   }
 }

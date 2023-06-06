@@ -5,12 +5,16 @@ import { OverviewComponent } from './component/overview/overview.component';
 import { BasketComponent } from './basket/basket/basket.component';
 import { ToPaymentComponent } from './to-payment/to-payment/to-payment.component';
 import { LoginComponent } from './login/login/login.component';
+import { RegistFormularComponent } from './login/regist-formular/regist-formular.component';
+import { PaymentOverviewComponent } from './component/payment-overview/payment-overview.component';
 
 const routes: Routes = [
   { path: 'overview',component: OverviewComponent},
   { path: 'basket', component:BasketComponent },
   { path: 'to-payment', component:ToPaymentComponent },
   { path: 'login', component:LoginComponent },
+  { path: 'regist', component:RegistFormularComponent },
+  { path: 'payment-overview', component:PaymentOverviewComponent },
 
   { path: '',redirectTo:'overview',pathMatch:'full'},
   { path: '', component: NavComponent},

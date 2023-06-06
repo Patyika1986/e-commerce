@@ -1,0 +1,40 @@
+.wrapper {
+    margin-top: 5rem;
+    padding: 2rem;
+    background-color: var(--black-color);
+    color: var(--white-color);
+}
+
+button {
+    background-color: var(--purple-color);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+
+    &:focus-visible{
+        background-color: var(--purple-color);
+
+    }
+
+    &:hover {
+    background-color: var(--purple-color);
+    }
+    &:focus {
+        background-color: var(--purple-color);
+        }
+  
+    &:active {
+      transform: scale(0.86);
+      opacity: 0.9;
+      background-color: var(--purple-color);
+
+    }
+  }
+
+  #flexSwitchCheckDefault {
+    background-color: var(--purple-color);
+    border: none;
+    cursor: pointer;
+    outline: none;
+    box-shadow: none;
+  }
