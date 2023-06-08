@@ -33,25 +33,7 @@ export class PaymentOverviewComponent implements OnInit {
     ],
   });
 
-  public klarnaForm = this.formbuilder.group({
-    klarnaEmail: [
-      '',
-      Validators.compose([
-        Validators.required,
-        Validators.email,
-        Validators.minLength(7),
-        Validators.maxLength(35),
-      ]),
-    ],
-    klarnaPassword: [
-      '',
-      Validators.compose([
-        Validators.required,
-        Validators.minLength(4),
-        Validators.maxLength(4),
-      ]),
-    ],
-  });
+
 
   public creditCardForm = this.formbuilder.group({
     cardName: [
@@ -80,6 +62,28 @@ export class PaymentOverviewComponent implements OnInit {
       ]),
     ],
   });
+
+
+  public klarnaForm = this.formbuilder.group({
+    klarnaEmail: [
+      '',
+      Validators.compose([
+        Validators.required,
+        Validators.email,
+        Validators.minLength(7),
+        Validators.maxLength(35),
+      ]),
+    ],
+    klarnaPassword: [
+      '',
+      Validators.compose([
+        Validators.required,
+        Validators.minLength(4),
+        Validators.maxLength(4),
+      ]),
+    ],
+  });
+
 
   public paymentMethod = ['PayPal', 'Klarna', 'Credit-Card'];
 
@@ -127,7 +131,7 @@ export class PaymentOverviewComponent implements OnInit {
     }
   }
 
-  payWithPayPal() {
+  payWithPayPal($event:Event) {
     if (this.payPalForm.status === 'VALID') {
       this.modalTitle = 'Pay with PayPal';
       this.modalStatusText = 'Was Successfully';
@@ -137,7 +141,8 @@ export class PaymentOverviewComponent implements OnInit {
     }
   }
 
-  payWithKlarna() {
+  
+  payWithKlarna($event:Event) {
     if (this.klarnaForm.status === 'VALID') {
       this.modalTitle = 'Pay with Klarna';
       this.modalStatusText = 'Was Successfully';
@@ -146,6 +151,8 @@ export class PaymentOverviewComponent implements OnInit {
       this.modalStatusText = 'Was not successful something went wrong !';
     }
   }
+
+
 
   payWithCreditCard() {
     console.log(this.creditCardForm);

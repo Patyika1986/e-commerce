@@ -19,6 +19,9 @@ import { FooterComponent } from './component/footer/footer.component';
 import { LoginComponent } from './login/login/login.component';
 import { RegistFormularComponent } from './login/regist-formular/regist-formular.component';
 import { PaymentOverviewComponent } from './component/payment-overview/payment-overview.component';
+import { KlarnaPaymentFormComponent } from './component/klarna-payment-form/klarna-payment-form.component';
+import { CreditCardFormComponent } from './component/credit-card-form/credit-card-form.component';
+import { PaypalFormComponent } from './component/paypal-form/paypal-form.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +35,10 @@ import { PaymentOverviewComponent } from './component/payment-overview/payment-o
     FooterComponent,
     LoginComponent,
     RegistFormularComponent,
-    PaymentOverviewComponent
+    PaymentOverviewComponent,
+    KlarnaPaymentFormComponent,
+    CreditCardFormComponent,
+    PaypalFormComponent
   ],
   imports: [
     BrowserModule,

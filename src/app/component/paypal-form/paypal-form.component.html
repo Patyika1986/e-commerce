@@ -1,0 +1,41 @@
+<form [formGroup]="paypalForm">
+  <div class="row mt-5 mb-3">
+    <h4>Login with your PayPal Account</h4>
+
+    <div class="col">
+      <label class="form-label">E-Mail</label>
+      <input
+        type="email"
+        class="form-control"
+        name="paypalEmail"
+        placeholder="E-Mail"
+        formControlName="paypalEmail"
+      />
+    </div>
+  </div>
+  <div class="row mt-3 mb-3">
+    <div class="col">
+      <label class="form-label">Password</label>
+      <input
+        type="password"
+        class="form-control"
+        name="paypalPassword"
+        placeholder="Passsword"
+        formControlName="paypalPassword"
+      />
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <button
+        class="btn btn-success"
+        type="button"
+        data-bs-toggle="modal"
+        data-bs-target="#exampleModal"
+        (click)="payWithPayPal($event)"
+      >
+        Log in
+      </button>
+    </div>
+  </div>
+</form>

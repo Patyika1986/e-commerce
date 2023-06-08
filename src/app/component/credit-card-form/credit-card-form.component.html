@@ -1,0 +1,63 @@
+<form [formGroup]="creditForm">
+  <div class="row mt-5 mb-3">
+    <h4>Pay with your Credit Card</h4>
+
+    <div class="col">
+      <label class="form-label">Card Holder Name</label>
+      <input
+        type="text"
+        class="form-control"
+        name="cardName"
+        placeholder="Card Holder Name"
+        formControlName="cardName"
+      />
+    </div>
+  </div>
+  <div class="row mt-3 mb-3">
+    <div class="col">
+      <label class="form-label">Card Number</label>
+      <input
+        type="number"
+        class="form-control"
+        name="cardNumber"
+        placeholder="Card Number"
+        formControlName="cardNumber"
+      />
+    </div>
+  </div>
+  <div class="row mt-3 mb-3">
+    <div class="col">
+      <label class="form-label">Month and Year</label>
+      <input
+        type="text"
+        class="form-control"
+        name="monthYear"
+        placeholder="MM/YY"
+        formControlName="monthYear"
+      />
+    </div>
+    <div class="col">
+      <label class="form-label">CVC</label>
+      <input
+        type="text"
+        class="form-control"
+        name="cvc"
+        placeholder="CVC"
+        formControlName="cvc"
+      />
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <button
+        class="btn btn-success"
+        type="button"
+        data-bs-toggle="modal"
+        data-bs-target="#exampleModal"
+        (click)="payWithCreditCard($event)"
+      >
+        Pay {{ totalPrice }} €
+      </button>
+    </div>
+  </div>
+</form>

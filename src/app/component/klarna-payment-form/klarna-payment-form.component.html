@@ -1,0 +1,41 @@
+<form [formGroup]="klarnaForms">
+  <div class="row mt-5 mb-3">
+    <h4>Login with your Klarna Account</h4>
+
+    <div class="col">
+      <label class="form-label">E-Mail</label>
+      <input
+        type="email"
+        class="form-control"
+        name="klarnaEmail"
+        placeholder="E-Mail"
+        formControlName="klarnaEmail"
+      />
+    </div>
+  </div>
+  <div class="row mt-3 mb-3">
+    <div class="col">
+      <label class="form-label">Password</label>
+      <input
+        type="password"
+        class="form-control"
+        name="klarnaPassword"
+        placeholder="Passsword"
+        formControlName="klarnaPassword"
+      />
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <button
+        class="btn btn-success"
+        type="button"
+        data-bs-toggle="modal"
+        data-bs-target="#exampleModal"
+        (click)="payWithKlarna($event)"
+      >
+        Log in
+      </button>
+    </div>
+  </div>
+</form>
