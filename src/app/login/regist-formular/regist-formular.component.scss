@@ -1,8 +1,25 @@
 .wrapper {
-    margin-top: 5rem;
+    margin-top: -2rem;
     padding: 2rem;
     background-color: var(--black-color);
     color: var(--white-color);
+    .container {
+      #form {
+        .row {
+          @media(max-width: 500px){
+            flex-direction: column;
+          }
+          .col {
+            input {
+              @media(max-width: 500px){
+                width: 100%;
+              }
+            }
+
+          }
+        }
+      }
+    }
 }
 
 button {
