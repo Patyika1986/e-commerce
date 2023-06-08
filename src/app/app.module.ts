@@ -22,6 +22,7 @@ import { PaymentOverviewComponent } from './component/payment-overview/payment-o
 import { KlarnaPaymentFormComponent } from './component/klarna-payment-form/klarna-payment-form.component';
 import { CreditCardFormComponent } from './component/credit-card-form/credit-card-form.component';
 import { PaypalFormComponent } from './component/paypal-form/paypal-form.component';
+import { PayModalComponent } from './component/pay-modal/pay-modal.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +39,8 @@ import { PaypalFormComponent } from './component/paypal-form/paypal-form.compone
     PaymentOverviewComponent,
     KlarnaPaymentFormComponent,
     CreditCardFormComponent,
-    PaypalFormComponent
+    PaypalFormComponent,
+    PayModalComponent
   ],
   imports: [
     BrowserModule,
