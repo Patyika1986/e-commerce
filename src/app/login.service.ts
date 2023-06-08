@@ -13,6 +13,8 @@ export class LoginService {
       'Content-Type': 'application/json',
       Accept: 'application/json',
     });
+    console.log(user,'service user');
+    
     return this.http.post(
       'https://e-commerce-294cd-default-rtdb.firebaseio.com/register.json',
       user,
