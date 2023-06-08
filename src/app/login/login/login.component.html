@@ -58,7 +58,7 @@
           <label
             class="text-danger mt-2 mx-2"
             *ngIf="form.get('password')?.hasError('maxlength')"
-            >The password can only be 4 characters long</label
+            >The password can only be 20 characters long</label
           >
           <p class="text-danger mt-1" *ngIf="isUserRegistred">
             {{ acountNotExist }}
