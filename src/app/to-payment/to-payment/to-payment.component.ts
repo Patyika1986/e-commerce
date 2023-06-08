@@ -56,6 +56,10 @@ export class ToPaymentComponent implements OnInit {
   }
 
   navigateToLogin(){    
-    this.route.navigate(['login']);
+    if(window.localStorage.getItem('userIsLoged')){
+      this.route.navigate(['payment-overview']);
+    }else {
+      this.route.navigate(['login']);
+    }
   }
 }
