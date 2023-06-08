@@ -94,8 +94,19 @@ export class PaymentOverviewComponent implements OnInit {
   public modalTitle: string = '';
   public modalStatusText: string = '';
   public totalPrice: number = 0;
+  
+  public cardItems:any[] = [];
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.dataStroreService.getAllItemsFromCart().subscribe(items => {
+      console.log(items);
+      items.map((dataList:any) => {
+        this.cardItems.push(dataList[0]);        
+      });
+
+      
+    })
+  }
 
   selectPayment(event: any) {
     switch (event.target.value) {

@@ -23,6 +23,7 @@ import { KlarnaPaymentFormComponent } from './component/klarna-payment-form/klar
 import { CreditCardFormComponent } from './component/credit-card-form/credit-card-form.component';
 import { PaypalFormComponent } from './component/paypal-form/paypal-form.component';
 import { PayModalComponent } from './component/pay-modal/pay-modal.component';
+import { OrderListComponent } from './component/order-list/order-list.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +41,8 @@ import { PayModalComponent } from './component/pay-modal/pay-modal.component';
     KlarnaPaymentFormComponent,
     CreditCardFormComponent,
     PaypalFormComponent,
-    PayModalComponent
+    PayModalComponent,
+    OrderListComponent
   ],
   imports: [
     BrowserModule,

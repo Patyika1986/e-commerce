@@ -1,24 +1,30 @@
 .wrapper {
-    margin-top: -2rem;
-    padding: 2rem;
-    background-color: var(--black-color);
-    color: var(--white-color);
+  margin-top: -2rem;
+  padding: 2rem;
+  background-color: var(--black-color);
+  color: var(--white-color);
 }
 
-
-
-
 button {
-    cursor: pointer;
-    transition: all 0.2s ease;
-    border: none;
-    background-color: var(--purple-color);
-  
-    &:active {
-      transform: scale(0.96);
-      opacity: 0.9;
-    }
-    &:hover {
-        background-color: var(--purple-color);
-      }
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+  background-color: var(--purple-color);
+
+  &:active {
+    transform: scale(0.96);
+    opacity: 0.9;
   }
+  &:hover {
+    background-color: var(--purple-color);
+  }
+}
+
+.order {
+  width: 100vw;
+  margin: 1rem auto;
+  padding: 1rem;
+  background-color: var(--black-color);
+
+
+}
