@@ -55,7 +55,7 @@ export class ToPaymentComponent implements OnInit {
       });
   }
 
-  navigateToLogin(){
+  navigateToLogin(){    
     this.route.navigate(['login']);
   }
 }
