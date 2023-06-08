@@ -1,2 +1,220 @@
 <app-nav></app-nav>
-<p>payment-overview works!</p>
+<div class="wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <h1>Payment overview</h1>
+      </div>
+    </div>
+
+    <div class="row mt-3 mb-5">
+      <div class="col">
+        <select
+          class="form-select"
+          aria-label="Default select example"
+          (change)="selectPayment($event)"
+        >
+          <option>---Choose your payment method---</option>
+          <option value="{{ pay }}" *ngFor="let pay of paymentMethod">
+            {{ pay }}
+          </option>
+        </select>
+      </div>
+    </div>
+
+    <!--paypal-->
+    <div id="paypal" *ngIf="payPal">
+      <form [formGroup]="payPalForm">
+        <div class="row mt-5 mb-3">
+          <h4>Login with your PayPal Account</h4>
+
+          <div class="col">
+            <label class="form-label">E-Mail</label>
+            <input
+              type="email"
+              class="form-control"
+              name="paypalEmail"
+              placeholder="E-Mail"
+              formControlName="paypalEmail"
+            />
+          </div>
+        </div>
+        <div class="row mt-3 mb-3">
+          <div class="col">
+            <label class="form-label">Password</label>
+            <input
+              type="password"
+              class="form-control"
+              name="paypalPassword"
+              placeholder="Passsword"
+              formControlName="paypalPassword"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <button
+              class="btn btn-success"
+              type="button"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+              (click)="payWithPayPal()"
+            >
+              Log in
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <!--klarna-->
+    <div id="klarna" *ngIf="klarna">
+      <form [formGroup]="klarnaForm">
+        <div class="row mt-5 mb-3">
+          <h4>Login with your Klarna Account</h4>
+
+          <div class="col">
+            <label class="form-label">E-Mail</label>
+            <input
+              type="email"
+              class="form-control"
+              name="klarnaEmail"
+              placeholder="E-Mail"
+              formControlName="klarnaEmail"
+            />
+          </div>
+        </div>
+        <div class="row mt-3 mb-3">
+          <div class="col">
+            <label class="form-label">Password</label>
+            <input
+              type="password"
+              class="form-control"
+              name="klarnaPassword"
+              placeholder="Passsword"
+              formControlName="klarnaPassword"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <button
+              class="btn btn-success"
+              type="button"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+              (click)="payWithKlarna()"
+            >
+              Log in
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <!--credit card-->
+    <div id="credit-card" *ngIf="creditCard">
+      <form [formGroup]="creditCardForm">
+        <div class="row mt-5 mb-3">
+          <h4>Pay with your Credit Card</h4>
+
+          <div class="col">
+            <label class="form-label">Card Holder Name</label>
+            <input
+              type="text"
+              class="form-control"
+              name="cardName"
+              placeholder="Card Holder Name"
+              formControlName="cardName"
+            />
+          </div>
+        </div>
+        <div class="row mt-3 mb-3">
+          <div class="col">
+            <label class="form-label">Card Number</label>
+            <input
+              type="number"
+              class="form-control"
+              name="cardNumber"
+              placeholder="Card Number"
+              formControlName="cardNumber"
+            />
+          </div>
+        </div>
+        <div class="row mt-3 mb-3">
+          <div class="col">
+            <label class="form-label">Month and Year</label>
+            <input
+              type="text"
+              class="form-control"
+              name="monthYear"
+              placeholder="MM/YY"
+              formControlName="monthYear"
+            />
+          </div>
+          <div class="col">
+            <label class="form-label">CVC</label>
+            <input
+              type="text"
+              class="form-control"
+              name="cvc"
+              placeholder="CVC"
+              formControlName="cvc"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <button
+              class="btn btn-success"
+              type="button"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+              (click)="payWithCreditCard()"
+            >
+              Pay {{ totalPrice }} €
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!--paypal modal-->
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">
+          {{ modalTitle }}
+        </h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">{{ modalStatusText }}</div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-secondary"
+          data-bs-dismiss="modal"
+          (click)="closeModal()"
+        >
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
