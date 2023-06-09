@@ -125,7 +125,7 @@ export class BasketComponent implements OnInit {
     });
   }
 
-  navigationToPamyment(){
+  navigationToPamyment() {
     this.dataStoregeService.deleteAllBasketItems().subscribe();
     this.router.navigate(['to-payment']);
   }

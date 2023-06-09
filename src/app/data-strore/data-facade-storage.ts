@@ -14,7 +14,7 @@ export class DataFacadeStorage {
   ) {}
 
   private _getItems$ = new BehaviorSubject<any>([]);
-  public getItems$:Observable<any> = this._getItems$.asObservable();
+  public getItems$: Observable<any> = this._getItems$.asObservable();
 
   private _products$ = new BehaviorSubject<any>([]);
   public products$: Observable<any> = this._products$.asObservable();
@@ -23,38 +23,39 @@ export class DataFacadeStorage {
   public basketItems$: Observable<any> = this._basketItems$.asObservable();
 
   private _editItem$ = new BehaviorSubject<any>([]);
-  public editItem$:Observable<any> = this._editItem$.asObservable();
+  public editItem$: Observable<any> = this._editItem$.asObservable();
 
   private _adtobasket$ = new BehaviorSubject<any>([]);
-  public adtobasket$:Observable<any> = this._adtobasket$.asObservable();
+  public adtobasket$: Observable<any> = this._adtobasket$.asObservable();
 
+  private subscribtions$ = new Subject();
 
-
- private subscribtions$ = new Subject();
-
-
- getItems():void{
-  this.dataStoreService.getItems().pipe(takeUntil(this.subscribtions$)).subscribe(allItems => {
-    this._getItems$.next(allItems)
-  })
- }
-
-
- addToBasket(item:ProductsInterface[]): void {
-   this.dataStoreService.addToBasket(item).pipe(takeUntil(this.subscribtions$)).subscribe(itemData => {
-       this._adtobasket$.next(itemData);
-   });
- }
-
-   getItemsFromBasket(): void {
-    this.dataStoreService.getItemsFromBasket().pipe(takeUntil(this.subscribtions$)).subscribe(itemData => {
-        this._basketItems$.next(itemData);
-    });
+  getItems(): void {
+    this.dataStoreService
+      .getItems()
+      .pipe(takeUntil(this.subscribtions$))
+      .subscribe((allItems) => {
+        this._getItems$.next(allItems);
+      });
   }
 
+  addToBasket(item: ProductsInterface[]): void {
+    this.dataStoreService
+      .addToBasket(item)
+      .pipe(takeUntil(this.subscribtions$))
+      .subscribe((itemData) => {
+        this._adtobasket$.next(itemData);
+      });
+  }
 
-
- 
+  getItemsFromBasket(): void {
+    this.dataStoreService
+      .getItemsFromBasket()
+      .pipe(takeUntil(this.subscribtions$))
+      .subscribe((itemData) => {
+        this._basketItems$.next(itemData);
+      });
+  }
 
   // addItem(item:any): void {
   //   this.dataStoreService.postProduct(item).pipe(takeUntil(this.subscribtions$)).subscribe(itemData => {
@@ -62,15 +63,9 @@ export class DataFacadeStorage {
   //   });
   // }
 
-
-
-
   // editItem(id:any,data:any):void{
   //   this.dataStoreService.updateItem(id,data).pipe(takeUntil(this.subscribtions$)).subscribe(list => {
   //     this._editItem$.next(list);
   //   });
   // }
-
-
-
 }

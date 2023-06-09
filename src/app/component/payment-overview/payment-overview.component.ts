@@ -33,8 +33,6 @@ export class PaymentOverviewComponent implements OnInit {
     ],
   });
 
-
-
   public creditCardForm = this.formbuilder.group({
     cardName: [
       '',
@@ -63,7 +61,6 @@ export class PaymentOverviewComponent implements OnInit {
     ],
   });
 
-
   public klarnaForm = this.formbuilder.group({
     klarnaEmail: [
       '',
@@ -84,7 +81,6 @@ export class PaymentOverviewComponent implements OnInit {
     ],
   });
 
-
   public paymentMethod = ['PayPal', 'Klarna', 'Credit-Card'];
 
   public payPal: boolean = true;
@@ -94,18 +90,16 @@ export class PaymentOverviewComponent implements OnInit {
   public modalTitle: string = '';
   public modalStatusText: string = '';
   public totalPrice: number = 0;
-  
-  public cardItems:any[] = [];
+
+  public cardItems: any[] = [];
 
   ngOnInit(): void {
-    this.dataStroreService.getAllItemsFromCart().subscribe(items => {
+    this.dataStroreService.getAllItemsFromCart().subscribe((items) => {
       console.log(items);
-      items.map((dataList:any) => {
-        this.cardItems.push(dataList[0]);        
+      items.map((dataList: any) => {
+        this.cardItems.push(dataList[0]);
       });
-
-      
-    })
+    });
   }
 
   selectPayment(event: any) {
@@ -142,7 +136,7 @@ export class PaymentOverviewComponent implements OnInit {
     }
   }
 
-  payWithPayPal($event:Event) {
+  payWithPayPal($event: Event) {
     if (this.payPalForm.status === 'VALID') {
       this.modalTitle = 'Pay with PayPal';
       this.modalStatusText = 'Was Successfully';
@@ -152,8 +146,7 @@ export class PaymentOverviewComponent implements OnInit {
     }
   }
 
-  
-  payWithKlarna($event:Event) {
+  payWithKlarna($event: Event) {
     if (this.klarnaForm.status === 'VALID') {
       this.modalTitle = 'Pay with Klarna';
       this.modalStatusText = 'Was Successfully';
@@ -162,8 +155,6 @@ export class PaymentOverviewComponent implements OnInit {
       this.modalStatusText = 'Was not successful something went wrong !';
     }
   }
-
-
 
   payWithCreditCard() {
     console.log(this.creditCardForm);

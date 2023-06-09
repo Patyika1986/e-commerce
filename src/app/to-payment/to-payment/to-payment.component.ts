@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { DataStoreService } from 'src/app/data-strore/data-store.service';
-import { map } from 'rxjs';
 import { Router } from '@angular/router';
 
 @Component({
@@ -19,12 +18,12 @@ export class ToPaymentComponent implements OnInit {
   public cartItems: any[] = [];
   public total: number = 0;
   public price: number = 0;
-  public item:any;
+  public item: any;
 
   ngOnInit(): void {
     this.dataStoreService.getAllItemsFromCart().subscribe((list) => {
       console.log(list);
-      
+
       list.map((data: any) => {
         data[0].price *= data[0].amount;
         this.cartItems.push(data[0]);
@@ -39,11 +38,11 @@ export class ToPaymentComponent implements OnInit {
     });
   }
 
-  itemToRemove(id:any) {
-    this.dataStoreService.getAllItemsFromCart().subscribe(list => {
+  itemToRemove(id: any) {
+    this.dataStoreService.getAllItemsFromCart().subscribe((list) => {
       this.dataStoreService.removeItem(list[0].id).subscribe();
-      const element = this.cartItems.find(item => item.id === id.id);
-      this.cartItems.splice(element,1)
+      const element = this.cartItems.find((item) => item.id === id.id);
+      this.cartItems.splice(element, 1);
     });
   }
 
@@ -55,10 +54,10 @@ export class ToPaymentComponent implements OnInit {
       });
   }
 
-  navigateToLogin(){    
-    if(window.localStorage.getItem('userIsLoged')){
+  navigateToLogin() {
+    if (window.localStorage.getItem('userIsLoged')) {
       this.route.navigate(['payment-overview']);
-    }else {
+    } else {
       this.route.navigate(['login']);
     }
   }

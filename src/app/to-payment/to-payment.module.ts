@@ -4,16 +4,10 @@ import { Routes } from '@angular/router';
 import { ToPaymentComponent } from './to-payment/to-payment.component';
 import { HttpClientModule } from '@angular/common/http';
 
-
-const routes: Routes = [
-  { path:'', component: ToPaymentComponent }
-];
+const routes: Routes = [{ path: '', component: ToPaymentComponent }];
 
 @NgModule({
   declarations: [],
-  imports: [
-    CommonModule,
-    HttpClientModule
-  ]
+  imports: [CommonModule, HttpClientModule],
 })
-export class ToPaymentModule { }
+export class ToPaymentModule {}
