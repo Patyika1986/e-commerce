@@ -1,13 +1,13 @@
 .wrapper {
     margin-top: -2rem;
-    padding: 2rem;
+    padding: var(--padding-x);
     background-color: var(--black-color);
 
     .container {
 
 
         #form {
-            padding: 1rem;
+            padding: var(--padding-s);
             border-radius: var(--rem-xs);
             .row {
                 .col {

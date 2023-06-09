@@ -1,6 +1,6 @@
 .wrapper {
     margin-top: -2rem;
-    padding: 2rem;
+    padding: var(--padding-x);
     background-color: var(--black-color);
     color: var(--white-color);
     .container {

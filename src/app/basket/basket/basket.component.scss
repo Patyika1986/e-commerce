@@ -4,7 +4,7 @@
 
   .my-container {
     width: 99%;
-    padding: 1rem;
+    padding: var(--padding-s);
     margin: auto;
     @media (max-width: 768px) {
       flex-direction: column;
@@ -14,10 +14,10 @@
       width: 30%;
       height: auto;
       margin: auto;
-      padding: 1rem;
-      border-top: 1px solid lightgray;
-      border-left: 1px solid lightgray;
-      border-right: 1px solid lightgray;
+      padding: var(--padding-s);
+      border-top: 1px solid var(--light-gray);
+      border-left: 1px solid var(--light-gray);
+      border-right: 1px solid var(--light-gray);
       @media (max-width: 2560px) {
         width: 50%;
       }
@@ -33,12 +33,12 @@
 
     .product-info {
       width: 30%;
-      padding: 1rem;
+      padding: var(--padding-s);
       margin: auto;
 
-      border-left: 1px solid lightgray;
-      border-right: 1px solid lightgray;
-      border-bottom: 1px solid lightgray;
+      border-left: 1px solid var(--light-gray);
+      border-right: 1px solid var(--light-gray);
+      border-bottom: 1px solid var(--light-gray);
       @media (max-width: 2560px) {
         width: 50%;
       }
@@ -58,20 +58,20 @@
           flex-wrap: wrap;
 
           .size {
-            padding: 1rem;
+            padding: var(--padding-s);
             display: flex;
             flex-direction: row;
             justify-content: center;
             align-items: center;
-            border: 1px solid lightgray;
-            margin-right: 0.5rem;
+            border: 1px solid var(--light-gray);
+            margin-right: var(--margin-sm);
             cursor: pointer;
           }
         }
 
         .item-info {
           height: 55px;
-          margin-top: 0.5rem;
+          margin-top: var(--margin-sm);
           display: flex;
 
           .button-box {
@@ -87,7 +87,7 @@
               margin-left: 0.3rem;
               margin-right: 0.3rem;
               transition: all 0.2s ease;
-              border: 1px solid lightgray;
+              border: 1px solid var(--light-gray);
               background-color: var(--black-color);
               color: var(--white-color);
 
@@ -102,7 +102,7 @@
             width: 80%;
             border: none;
             transition: all 0.2s ease;
-            border: 1px solid lightgray;
+            border: 1px solid var(--light-gray);
             background-color: var(--purple-color);
             color: var(--white-color);
             font-weight: 400;
@@ -121,7 +121,7 @@
           display: flex;
           justify-content: center;
           align-items: center;
-          border: 1px solid lightgray;
+          border: 1px solid var(--light-gray);
         }
       }
     }
@@ -130,8 +130,8 @@
 
 .paymant-box{
   width: 45vw;
-  padding: 1rem;
-  margin: 1rem auto;
+  padding: var(--padding-s);
+  margin: var(--margin-s) auto;
   display: flex;
   justify-content: center;
   @media (max-width: 786px) {
@@ -143,11 +143,11 @@
 
   #to-payment {
     width: 100%;
-    padding: 1rem;
+    padding: var(--padding-s);
     border: none;
     font-weight: var(--font-weight-m);
     transition: all 0.2s ease;
-    border: 1px solid lightgray;
+    border: 1px solid var(--light-gray);
     background-color: var(--light-green);
     word-spacing: 2px;
 

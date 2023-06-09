@@ -3,7 +3,7 @@
   background-color: var(--black-color);
   box-sizing: border-box;
   #footer {
-    padding: 1rem 0;
+    padding: var(--padding-s) 0;
     .row {
       @media (max-width: 768px) {
         flex-direction: column;

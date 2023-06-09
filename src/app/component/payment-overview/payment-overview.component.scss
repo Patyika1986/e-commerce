@@ -1,6 +1,6 @@
 .wrapper {
   margin-top: -2rem;
-  padding: 2rem;
+  padding: var(--padding-x);
   background-color: var(--black-color);
   color: var(--white-color);
 }
@@ -22,8 +22,8 @@ button {
 
 .order {
   width: 100vw;
-  margin: 1rem auto;
-  padding: 1rem;
+  margin: var(--margin-s) auto;
+  padding: var(--padding-s);
   background-color: var(--black-color);
 
 
