@@ -3,9 +3,10 @@
   box-sizing: border-box;
 
   .my-container {
-    width: 99%;
+    width: var(--width-l);
     padding: var(--padding-s);
     margin: auto;
+
     @media (max-width: 768px) {
       flex-direction: column;
     }
@@ -18,15 +19,16 @@
       border-top: 1px solid var(--light-gray);
       border-left: 1px solid var(--light-gray);
       border-right: 1px solid var(--light-gray);
+
       @media (max-width: 2560px) {
-        width: 50%;
+        width: var(--widht-s);
       }
       @media (max-width: 768px) {
-        width: 75%;
+        width: var(--width-m);
         margin: auto;
       }
       @media (max-width: 500px) {
-        width: 99%;
+        width: var(--width-l);
         margin: auto;
       }
     }
@@ -39,20 +41,22 @@
       border-left: 1px solid var(--light-gray);
       border-right: 1px solid var(--light-gray);
       border-bottom: 1px solid var(--light-gray);
+
       @media (max-width: 2560px) {
-        width: 50%;
+        width: var(--widht-s);
       }
       @media (max-width: 768px) {
-        width: 75%;
+        width: var(--width-m);
         margin: auto;
       }
       @media (max-width: 500px) {
-        width: 99%;
+        width: var(--width-l);
         margin: auto;
       }
+
       .description {
         .sizes {
-          width: 100%;
+          width: var(--width-xl);
           display: flex;
           justify-content: flex-start;
           flex-wrap: wrap;
@@ -128,21 +132,22 @@
   }
 }
 
-.paymant-box{
+.paymant-box {
   width: 45vw;
   padding: var(--padding-s);
   margin: var(--margin-s) auto;
   display: flex;
   justify-content: center;
+
   @media (max-width: 786px) {
-    width: 75%;
+    width: var(--width-m);
   }
   @media (max-width: 500px) {
     width: 99%;
   }
 
   #to-payment {
-    width: 100%;
+    width: var(--width-xl);
     padding: var(--padding-s);
     border: none;
     font-weight: var(--font-weight-m);
@@ -151,7 +156,6 @@
     background-color: var(--light-green);
     word-spacing: 2px;
 
-
     &:active {
       transform: scale(0.96);
       opacity: 0.9;
@@ -159,10 +163,8 @@
   }
 }
 
-
-
 img {
-  width: 100%;
+  width: var(--width-xl);
   height: auto;
   border-radius: var(--rem-xs);
 }

@@ -1,14 +1,15 @@
 button {
-    cursor: pointer;
-    transition: all 0.2s ease;
-    border: none;
-    background-color: var(--purple-color);
-  
-    &:active {
-      transform: scale(0.96);
-      opacity: 0.9;
-    }
-    &:hover {
-        background-color: var(--purple-color);
-      }
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+  background-color: var(--purple-color);
+
+  &:active {
+    transform: scale(0.96);
+    opacity: 0.9;
   }
+
+  &:hover {
+    background-color: var(--purple-color);
+  }
+}

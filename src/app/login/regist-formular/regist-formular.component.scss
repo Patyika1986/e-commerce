@@ -1,57 +1,57 @@
 .wrapper {
-    margin-top: -2rem;
-    padding: var(--padding-x);
-    background-color: var(--black-color);
-    color: var(--white-color);
-    .container {
-      #form {
-        .row {
-          @media(max-width: 500px){
-            flex-direction: column;
-          }
-          .col {
-            input {
-              @media(max-width: 500px){
-                width: 100%;
-              }
-            }
+  margin-top: -2rem;
+  padding: var(--padding-x);
+  background-color: var(--black-color);
+  color: var(--white-color);
 
+  .container {
+    #form {
+      .row {
+
+        @media (max-width: 500px) {
+          flex-direction: column;
+        }
+        
+        .col {
+          input {
+            @media (max-width: 500px) {
+              width: var(--width-xl);
+            }
           }
         }
       }
     }
+  }
 }
 
 button {
+  background-color: var(--purple-color);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+
+  &:focus-visible {
     background-color: var(--purple-color);
-    cursor: pointer;
-    transition: all 0.2s ease;
-    border: none;
-
-    &:focus-visible{
-        background-color: var(--purple-color);
-
-    }
-
-    &:hover {
-    background-color: var(--purple-color);
-    }
-    &:focus {
-        background-color: var(--purple-color);
-        }
-  
-    &:active {
-      transform: scale(0.86);
-      opacity: 0.9;
-      background-color: var(--purple-color);
-
-    }
   }
 
-  #flexSwitchCheckDefault {
+  &:hover {
     background-color: var(--purple-color);
-    border: none;
-    cursor: pointer;
-    outline: none;
-    box-shadow: none;
   }
+  &:focus {
+    background-color: var(--purple-color);
+  }
+
+  &:active {
+    transform: scale(0.86);
+    opacity: 0.9;
+    background-color: var(--purple-color);
+  }
+}
+
+#flexSwitchCheckDefault {
+  background-color: var(--purple-color);
+  border: none;
+  cursor: pointer;
+  outline: none;
+  box-shadow: none;
+}

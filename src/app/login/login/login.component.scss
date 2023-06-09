@@ -1,43 +1,45 @@
 .wrapper {
-    margin-top: -2rem;
-    padding: var(--padding-x);
-    background-color: var(--black-color);
+  margin-top: -2rem;
+  padding: var(--padding-x);
+  background-color: var(--black-color);
 
-    .container {
+  .container {
+    #form {
+      padding: var(--padding-s);
+      border-radius: var(--rem-xs);
 
-
-        #form {
-            padding: var(--padding-s);
-            border-radius: var(--rem-xs);
-            .row {
-                .col {
-                    a {
-                        color: var(--purple-color);
-                        text-decoration: none;
-                        &:hover {
-                            text-decoration: underline;
-                        }
-                    }
-                    button { background-color: var(--purple-color);}
-                    color: var(--white-color);
-                    h1 {
-                        color: var(--white-color);
-                    }
-                }
+      .row {
+        .col {
+          a {
+            color: var(--purple-color);
+            text-decoration: none;
+            &:hover {
+              text-decoration: underline;
             }
+          }
+
+          button {
+            background-color: var(--purple-color);
+          }
+          
+          color: var(--white-color);
+
+          h1 {
+            color: var(--white-color);
+          }
         }
+      }
     }
-
-
+  }
 }
 
 button {
-    cursor: pointer;
-    transition: all 0.2s ease;
-    border: none;
-  
-    &:active {
-      transform: scale(0.86);
-      opacity: 0.9;
-    }
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+
+  &:active {
+    transform: scale(0.86);
+    opacity: 0.9;
   }
+}

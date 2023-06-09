@@ -4,7 +4,6 @@
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
     word-spacing: 2px;
-
 }
 :root {
 
@@ -28,13 +27,17 @@
     --padding-m: 1.5rem;
     --padding-x: 2rem;
 
-
     //margin
     --margin-sm: .5rem;
     --margin-s: 1rem;
     --margin-m: 1.5rem;
     --margin-x: 2rem:
 
+    //width
+    --width-s:50%;
+    --width-m:75%;
+    --widht-l: 99%;
+    --width-xl:100%;
 
 }
 
