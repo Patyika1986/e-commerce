@@ -23,10 +23,14 @@
   </div>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="assets/image/galery-1.jpg" class="d-block w-100" alt="..." />
+      <img
+        src="assets/image/galery-1.jpg"
+        class="d-block w-100"
+        alt="item image"
+      />
     </div>
     <div class="carousel-item" *ngFor="let picture of galery">
-      <img src="{{ picture }}" class="d-block w-100" alt="..." />
+      <img src="{{ picture }}" class="d-block w-100" alt="item image" />
     </div>
   </div>
   <button

@@ -2,7 +2,7 @@
   <div class="my-rows">
     <div class="my-cols" *ngFor="let items of products; let item">
       <div class="my-cards">
-        <img src="{{ items.img }}" alt="" />
+        <img src="{{ items.img }}" alt="item images" />
         <h4>{{ items.name }}</h4>
         <p>{{ items.price }}€</p>
         <button id="button" (click)="addToBasket(item)">Buy</button>

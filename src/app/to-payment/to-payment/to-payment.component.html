@@ -1,11 +1,12 @@
 <app-nav></app-nav>
+
 <div class="wrapper">
   <div class="container p-5">
     <div class="list-group m-2" *ngFor="let items of cartItems; let id">
       <div class="list-group-item list-group-item-action">
         <h5 class="mb-2">{{ items.name }}</h5>
         <div class="d-flex w-100 justify-content-flex-start">
-          <img src="{{ items.img }}" alt="" />
+          <img src="{{ items.img }}" alt="item images" />
         </div>
         <p class="mb-2 mt-2">Delivery time {{ items.deliveryTime }}</p>
         <p class="mb-2 mt-2">Pieces {{ items.amount }}</p>

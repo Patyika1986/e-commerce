@@ -1,4 +1,5 @@
 <app-nav></app-nav>
+
 <div class="wrapper">
   <div class="container">
     <div class="row">
@@ -14,7 +15,7 @@
           aria-label="Default select example"
           (change)="selectPayment($event)"
         >
-          <option>---Choose your payment method---</option>
+          <option>--Choose your payment method--</option>
           <option value="{{ pay }}" *ngFor="let pay of paymentMethod">
             {{ pay }}
           </option>
@@ -62,6 +63,7 @@
   (modal)="closeModal()"
 ></app-pay-modal>
 
+<!-- Order List -->
 <div class="order">
   <app-order-list [itemList]="cardItems"></app-order-list>
 </div>
